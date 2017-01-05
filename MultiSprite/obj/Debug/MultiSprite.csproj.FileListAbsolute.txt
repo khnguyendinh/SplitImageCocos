@@ -1,0 +1,39 @@
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe.config
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\bin\Debug\MultiSprite.pdb
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csprojResolveAssemblyReference.cache
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Form1.resources
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Properties.Resources.resources
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csproj.GenerateResource.Cache
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.exe
+c:\users\khoa\documents\visual studio 2013\Projects\MultiSprite\MultiSprite\obj\Debug\MultiSprite.pdb
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe.config
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.exe
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.pdb
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\bin\Debug\MultiSprite.pdb
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Form1.resources
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Properties.Resources.resources
+C:\Users\Administrator\Documents\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csproj.GenerateResource.Cache
+D:\Libgdx\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe.config
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.exe
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.pdb
+D:\Libgdx\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe
+D:\Libgdx\MultiSprite\MultiSprite\bin\Debug\MultiSprite.pdb
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csprojResolveAssemblyReference.cache
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Form1.resources
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Properties.Resources.resources
+D:\Libgdx\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csproj.GenerateResource.Cache
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe.config
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.exe
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.pdb
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\bin\Debug\MultiSprite.exe
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\bin\Debug\MultiSprite.pdb
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csprojResolveAssemblyReference.cache
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Form1.resources
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.Properties.Resources.resources
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite\MultiSprite\obj\Debug\MultiSprite.csproj.GenerateResource.Cache
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite_SplistCocos\MultiSprite\bin\Debug\MultiSprite.exe.config
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite_SplistCocos\MultiSprite\obj\Debug\MultiSprite.exe
+C:\Users\adminpa\Google Drive\Cut Splist Cocos\MultiSprite_SplistCocos\MultiSprite\obj\Debug\MultiSprite.pdb
