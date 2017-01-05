@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using System.Collections.Generic;
 
 namespace MultiSprite
 {
@@ -118,7 +117,7 @@ namespace MultiSprite
                     txtInputAtlas.Text = open1.FileName;
                     string[] lines = System.IO.File.ReadAllLines(txtInputAtlas.Text);
                     input = System.IO.Path.GetDirectoryName(open1.FileName);
-                    Count_PNG = (lines.Length - 16) / 13;
+                    Count_PNG = (lines.Length - 22) / 19;
                     items = new Itemsssss[Count_PNG];
                     tdX = new int[Count_PNG];
                     tdY = new int[Count_PNG];
@@ -130,15 +129,15 @@ namespace MultiSprite
                     txtInput.Text = txtInputAtlas.Text.Replace("txt","png");
                     image = Image.FromFile(txtInput.Text);
                     pictureBox1.Image = image;
-                    for (int i = 6; i < lines.Length-16; i += 13)
+                    for (int i = 6; i < lines.Length-22; i += 19)
                     {
-                        int index = (i - 6) / 13;
+                        int index = (i - 6) / 19;
                         name_img[index] = getNameImg(RemoveWhiteSpace(lines[i]));
-                        tdX[index] = Int32.Parse(getToadoX(lines[i + 3],0));
-                        tdY[index] = Int32.Parse(getToadoX(lines[i + 3],1));
-                        wh[index] = Int32.Parse(getToadoX(lines[i + 3],2));
-                        hg[index] = Int32.Parse(getToadoX(lines[i + 3],3));
-                        //Console.WriteLine("t " + lines[i + 3]);
+                        tdX[index] = Int32.Parse(getToadoX(lines[i + 11]));
+                        tdY[index] = Int32.Parse(getToadoY(lines[i + 13]));
+                        wh[index] = Int32.Parse(getToadoX(lines[i + 3]));
+                        hg[index] = Int32.Parse(getToadoY(lines[i + 5]));
+                        Console.WriteLine("t " + lines[i + 10]);
 
                        Console.WriteLine("tdx = "+ tdX[index]+" tdy = "+ tdY[index]+
                             "wh = " + wh[index] + " hg = " + hg[index]);
@@ -163,20 +162,14 @@ namespace MultiSprite
                     MessageBox.Show("have " + Count_PNG + " PNG  in atlas"); 
 
         }
-        public string getToadoX(string str,int index)
+        public string getToadoX(string str)
         {
-            //Match match = Regex.Match(str, @"(\d+)");
-            List<long> numbers = Numbers(str);
-            // if (numbers.Count <= (index-1))
-            //{
-                Console.WriteLine("getToadoX " + numbers[index]);
-                  return numbers[index]+"";
-
-            //}
-            //else {
-            //    Console.WriteLine("errror");
-            //    return "0";
-            //}
+            Match match = Regex.Match(str, @"(\d+)");
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else return "0";
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -215,26 +208,6 @@ namespace MultiSprite
         public static string RemoveWhiteSpace(string self)
         {
             return new string(self.Where(c => !Char.IsWhiteSpace(c)).ToArray());
-        }
-        public static List<long> Numbers(string str)
-        {
-            var nums = new List<long>();
-            var start = -1;
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (start < 0 && Char.IsDigit(str[i]))
-                {
-                    start = i;
-                }
-                else if (start >= 0 && !Char.IsDigit(str[i]))
-                {
-                    nums.Add(long.Parse(str.Substring(start, i - start)));
-                    start = -1;
-                }
-            }
-            if (start >= 0)
-                nums.Add(long.Parse(str.Substring(start, str.Length - start)));
-            return nums;
         }
     }
 }
