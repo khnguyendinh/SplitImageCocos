@@ -19,6 +19,8 @@ namespace MultiSprite
         //string bb;
         int[] tdX, tdY;
         int[] wh, hg;
+        int[] offsetX, offsetY;
+        bool[] rotated;
         /// <summary>
         ///tên từng cái ảnh trước khi cắt
         /// 
@@ -77,10 +79,21 @@ namespace MultiSprite
             for (int j = 0; j < Count_PNG; j++)
             {
                 //Console.WriteLine("w = " + wh[j] + " h = " + hg[j]);
-                imgarray1[j] = new Bitmap(wh[j], hg[j]);//generating new bitmap
-                Graphics graphics = Graphics.FromImage(imgarray1[j]);
-                graphics.DrawImage(img, new Rectangle(0, 0, wh[j], hg[j]), new Rectangle(tdX[j], tdY[j], wh[j], hg[j]), GraphicsUnit.Pixel);//Generating Splitted Pieces of Image
-                graphics.Dispose();
+                if (rotated[j])
+                {
+                    imgarray1[j] = new Bitmap(hg[j], wh[j]);//generating new bitmap
+                    Graphics graphics = Graphics.FromImage(imgarray1[j]);
+                    graphics.DrawImage(img, new Rectangle(0, 0, hg[j], wh[j]), new Rectangle(tdX[j] + offsetX[j], tdY[j] + offsetY[j], hg[j], wh[j]), GraphicsUnit.Pixel);//Generating Splitted Pieces of Image
+                    graphics.Dispose();
+                }
+                else
+                {
+                    imgarray1[j] = new Bitmap(wh[j], hg[j]);//generating new bitmap
+                    Graphics graphics = Graphics.FromImage(imgarray1[j]);
+                    graphics.DrawImage(img, new Rectangle(0, 0, wh[j], hg[j]), new Rectangle(tdX[j]+offsetX[j], tdY[j] + offsetY[j], wh[j], hg[j]), GraphicsUnit.Pixel);//Generating Splitted Pieces of Image
+                    graphics.Dispose();
+                }
+                
             }
             //Image Is spitted You can use it by getting image from **imgarray[Rows, Columns]**
             //Or You can Save it by using Following Code
@@ -124,6 +137,9 @@ namespace MultiSprite
                     tdY = new int[Count_PNG];
                     wh = new int[Count_PNG];
                     hg = new int[Count_PNG];
+                    offsetX = new int[Count_PNG];
+                    offsetY = new int[Count_PNG];
+                    rotated = new bool[Count_PNG];
                     name_img = new string[Count_PNG];
                     folder_outPut = Path.GetDirectoryName(open1.FileName); ;
                     Console.WriteLine("path " + folder_outPut);
@@ -136,11 +152,14 @@ namespace MultiSprite
                         name_img[index] = getNameImg(RemoveWhiteSpace(lines[i]));
                         tdX[index] = Int32.Parse(getToadoX(lines[i + 3],0));
                         tdY[index] = Int32.Parse(getToadoX(lines[i + 3],1));
-                        wh[index] = Int32.Parse(getToadoX(lines[i + 3],2));
-                        hg[index] = Int32.Parse(getToadoX(lines[i + 3],3));
+                        wh[index] = Int32.Parse(getToadoX(lines[i + 3], 2));
+                        hg[index] = Int32.Parse(getToadoX(lines[i + 3], 3));
+                        offsetX[index] = Int32.Parse(getToadoX(lines[i + 5], 0));
+                        offsetY[index] = Int32.Parse(getToadoX(lines[i + 5], 1));
+                        rotated[index] = getRotated(lines[i + 7]);
                         //Console.WriteLine("t " + lines[i + 3]);
 
-                       Console.WriteLine("tdx = "+ tdX[index]+" tdy = "+ tdY[index]+
+                        Console.WriteLine("tdx = "+ tdX[index]+" tdy = "+ tdY[index]+
                             "wh = " + wh[index] + " hg = " + hg[index]);
 
                     }
@@ -150,6 +169,16 @@ namespace MultiSprite
                 }
             }
         }
+
+        private bool getRotated(string str)
+        {
+            str.Trim();
+            //string[] word = str.Split(' ');
+            //return ((str.Trim()).Split(' '))[0].Trim(',');
+            string nameFile = str.Replace("<", "").Replace("/>", "");
+            return Boolean.Parse(nameFile);
+        }
+
         /// <summary>
         /// đếm số file ảnh png có trong out
         /// </summary>
